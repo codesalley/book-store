@@ -1,7 +1,7 @@
 import uuid from 'uuid';
 import CATEGORIES from '../utils/categories';
 
-const bookStore = [
+const books = [
   {
     id: uuid.v4(),
     name: 'keep Me Calm',
@@ -16,7 +16,14 @@ const bookStore = [
     year: Date.now(),
     category: CATEGORIES[0],
   },
+  {
+    id: '212121h2jhj',
+    name: 'One Piece The Strongest ||',
+    author: 'Erebor',
+    year: Date.now(),
+    category: 'CATEGORIES[0]',
+  },
 
 ];
 
-export default bookStore;
+export default books;

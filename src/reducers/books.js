@@ -1,8 +1,8 @@
 import uuid from 'uuid';
 import { CREATE_BOOK, REMOVE_BOOK } from '../actions/types';
-import bookStore from '../store/initialState';
+import books from '../store/initialState';
 
-const booksReducer = (state = bookStore, action) => {
+const booksReducer = (state = books, action) => {
   const { type, payload } = action;
   switch (type) {
     case CREATE_BOOK:
