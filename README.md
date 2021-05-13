@@ -31,7 +31,7 @@ open ```localhost:3000``` in browser.
 
 ## Live Demo
 
-[Live](https://evening-badlands-91393.herokuapp.com/)
+[Live](https://quiet-savannah-56218.herokuapp.com/)
 
 ## **Author**
 
@@ -44,7 +44,7 @@ open ```localhost:3000``` in browser.
 
 Contributions, issues and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/juxsalley/calculator-react/issues).
+Feel free to check the [issues page](https://github.com/juxsalley/book-store/issues).
 
 ## Show your support
 
