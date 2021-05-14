@@ -9,12 +9,13 @@ import './BookList.css';
 const BookList = ({
   books, onclick, filter, handleFilterChange,
 }) => {
+  console.log(filter);
   console.log(handleFilterChange);
   return (
     <div className="main-book-list">
       <div className="fliter-div">
 
-        <CategoryFilter />
+        <CategoryFilter onchange={handleFilterChange} />
       </div>
       <table>
         <thead>
@@ -41,6 +42,7 @@ BookList.propTypes = {
   books: PropTypes.arrayOf(PropTypes.shape),
   onclick: PropTypes.func.isRequired,
   handleFilterChange: PropTypes.func.isRequired,
+  filter: PropTypes.string.isRequired,
 };
 
 BookList.defaultProps = {
@@ -49,7 +51,7 @@ BookList.defaultProps = {
 
 const mapStateToProps = (state) => ({
   books: state.books,
-  filter: this.state.filter,
+  filter: state.filter,
 });
 
 const mapDispatchToProps = {
