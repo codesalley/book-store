@@ -21,7 +21,7 @@ const books = [
     name: 'One Piece The Strongest ||',
     author: 'Erebor',
     year: Date.now(),
-    category: 'CATEGORIES[0]',
+    category: CATEGORIES[0],
   },
 
 ];
