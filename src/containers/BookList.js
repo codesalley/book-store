@@ -7,10 +7,19 @@ import CategoryFilter from '../components/CategoryFilter';
 import './BookList.css';
 
 const BookList = ({
-  books, onclick, filter, handleFilterChange,
+  books, onclick, filter, onchangeFilter,
 }) => {
+  console.log(books);
   console.log(filter);
-  console.log(handleFilterChange);
+
+  const handleFilterChange = (e) => {
+    onchangeFilter(e.target.value);
+  };
+  // if (filter !== 'all') {
+  //   // eslint-disable-next-line no-param-reassign
+  //   books = [...books.filter((ele) => ele.category === filter)];
+  // }
+
   return (
     <div className="main-book-list">
       <div className="fliter-div">
@@ -30,8 +39,11 @@ const BookList = ({
           </tr>
         </thead>
         <tbody>
+          {filter.filter === 'all'
+            ? books.map((book, index) => <Book book={book} key={index.toString()} onclick={onclick} />)
+            : books.filter((ele) => ele.category === filter.filter).map((book, index) => <Book book={book} key={index.toString()} onclick={onclick} />)}
+          {/* { books.map((book, index) => <Book book={book} key={index.toString()} onclick={onclick} />)} */}
 
-          {books.map((book, index) => <Book book={book} key={index.toString()} onclick={onclick} />)}
         </tbody>
       </table>
     </div>
@@ -41,8 +53,11 @@ const BookList = ({
 BookList.propTypes = {
   books: PropTypes.arrayOf(PropTypes.shape),
   onclick: PropTypes.func.isRequired,
-  handleFilterChange: PropTypes.func.isRequired,
-  filter: PropTypes.string.isRequired,
+  onchangeFilter: PropTypes.func.isRequired,
+  filter: PropTypes.shape({
+    filter: PropTypes.string.isRequired,
+  }).isRequired,
+
 };
 
 BookList.defaultProps = {
@@ -56,7 +71,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = {
   onclick: (id) => removeBook(id),
-  handleFilterChange: (filter) => changeFilter(filter),
+  onchangeFilter: (filter) => changeFilter(filter),
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(BookList);
