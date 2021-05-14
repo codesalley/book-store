@@ -28,32 +28,34 @@ const BookForm = ({ onSubmit }) => {
   };
 
   return (
-    <div className="form-div">
-      <form onSubmit={addBook}>
+    <div className="main-form">
+      <div className="form-div">
+        <form onSubmit={addBook}>
 
-        <div className="form-label">
-          <p> Book Title</p>
-          <input ref={bookTitle} id="title" type="text" className="form-control" placeholder="eg Dr, Wahab" />
-        </div>
+          <div className="form-label">
+            <p> Book Title</p>
+            <input ref={bookTitle} id="title" type="text" className="form-control" placeholder="eg Dr, Wahab" />
+          </div>
 
-        <div className="form-label">
-          <p> Book Author</p>
-          <input ref={bookAuthor} id="author" type="text" className="form-control" placeholder="eg Avengers" />
-        </div>
-        <div className="form-label">
-          <p> Release Year</p>
-          <input ref={bookYear} id="author" type="date" className="form-control" placeholder="eg Avengers" />
-        </div>
+          <div className="form-label">
+            <p> Book Author</p>
+            <input ref={bookAuthor} id="author" type="text" className="form-control" placeholder="eg Avengers" />
+          </div>
+          <div className="form-label">
+            <p> Release Year</p>
+            <input ref={bookYear} id="author" type="date" className="form-control" placeholder="eg Avengers" />
+          </div>
 
-        <div className="form-label">
-          <p>  Book Category </p>
-          <select id="category" ref={bookCategory}>
-            {CATEGORIES.map((ele, index) => <option key={index.toString()}>{ele}</option>)}
-          </select>
-        </div>
-        <button disabled={submited} className="btn" type="submit">Add Book</button>
+          <div className="form-label">
+            <p>  Book Category </p>
+            <select id="category" ref={bookCategory}>
+              {CATEGORIES.map((ele, index) => <option key={index.toString()}>{ele}</option>)}
+            </select>
+          </div>
+          <button disabled={submited} className="btn" type="submit">Add Book</button>
 
-      </form>
+        </form>
+      </div>
     </div>
   );
 };

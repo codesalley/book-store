@@ -22,3 +22,9 @@ select {
   border: none;
   border: 2px double #10b981;
 }
+
+.main-form {
+  width: 100%;
+  display: block;
+  transition:  all 5s 1s ease;
+}
