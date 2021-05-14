@@ -2,10 +2,12 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { removeBook } from '../actions';
 import Book from '../components/Book';
+import CategoryFilter from '../components/CategoryFilter';
 import './BookList.css';
 
 const BookList = ({ books, onclick }) => (
   <div className="main-book-list">
+    <CategoryFilter />
     <table>
       <thead>
 

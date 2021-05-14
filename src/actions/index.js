@@ -1,4 +1,4 @@
-import { CREATE_BOOK, REMOVE_BOOK } from './types';
+import { CREATE_BOOK, REMOVE_BOOK, CHANGE_FILTER } from './types';
 
 export const createBook = (name, author, year, category) => ({
   type: CREATE_BOOK,
@@ -16,4 +16,12 @@ export const removeBook = (id) => ({
   payload: {
     id,
   },
+});
+
+export const changeFilter = (filter) => ({
+  type: CHANGE_FILTER,
+  payload: {
+    filter,
+  },
+
 });

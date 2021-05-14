@@ -2,7 +2,7 @@ import uuid from 'uuid';
 import { format } from 'date-fns';
 import CATEGORIES from '../utils/categories';
 
-const books = [
+export const books = [
   {
     id: uuid.v4(),
     name: 'keep Me Calm',
@@ -27,4 +27,4 @@ const books = [
 
 ];
 
-export default books;
+export const filter = { filter: 'all' };
