@@ -9,16 +9,9 @@ import './BookList.css';
 const BookList = ({
   books, onclick, filter, onchangeFilter,
 }) => {
-  console.log(books);
-  console.log(filter);
-
   const handleFilterChange = (e) => {
     onchangeFilter(e.target.value);
   };
-  // if (filter !== 'all') {
-  //   // eslint-disable-next-line no-param-reassign
-  //   books = [...books.filter((ele) => ele.category === filter)];
-  // }
 
   return (
     <div className="main-book-list">
@@ -42,8 +35,6 @@ const BookList = ({
           {filter.filter === 'all'
             ? books.map((book, index) => <Book book={book} key={index.toString()} onclick={onclick} />)
             : books.filter((ele) => ele.category === filter.filter).map((book, index) => <Book book={book} key={index.toString()} onclick={onclick} />)}
-          {/* { books.map((book, index) => <Book book={book} key={index.toString()} onclick={onclick} />)} */}
-
         </tbody>
       </table>
     </div>
