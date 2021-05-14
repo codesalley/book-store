@@ -1,5 +1,7 @@
 import PropTypes from 'prop-types';
-import Book from './Book';
+import { connect } from 'react-redux';
+import { removeBook } from '../actions';
+import Book from '../components/Book';
 import './BookList.css';
 
 const BookList = ({ books, onclick }) => (
@@ -25,8 +27,7 @@ const BookList = ({ books, onclick }) => (
 );
 
 BookList.propTypes = {
-  // eslint-disable-next-line react/forbid-prop-types
-  books: PropTypes.array,
+  books: PropTypes.arrayOf(PropTypes.shape),
   onclick: PropTypes.func.isRequired,
 };
 
@@ -34,4 +35,12 @@ BookList.defaultProps = {
   books: [],
 };
 
-export default BookList;
+const mapStateToProps = (state) => ({
+  books: state.books,
+});
+
+const mapDispatchToProps = {
+  onclick: (id) => removeBook(id),
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(BookList);

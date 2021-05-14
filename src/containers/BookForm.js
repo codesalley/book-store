@@ -1,7 +1,8 @@
-/* eslint-disable max-len */
 import PropTypes from 'prop-types';
 import { useRef, useState } from 'react';
+import { connect } from 'react-redux';
 import { format } from 'date-fns';
+import { createBook } from '../actions';
 import CATEGORIES from '../utils/categories';
 import './BookForm.css';
 
@@ -16,8 +17,10 @@ const BookForm = ({ onSubmit }) => {
     e.preventDefault();
     setSubmit(true);
     if (typeof onSubmit === 'function') {
-      if (bookTitle.current.value && bookAuthor.current.value && bookYear.current.value && bookCategory.current.value) {
-        onSubmit(bookTitle.current.value, bookAuthor.current.value, format(new Date(bookYear.current.value), 'MMM YYY'), bookCategory.current.value);
+      if (bookTitle.current.value && bookAuthor.current.value
+        && bookYear.current.value && bookCategory.current.value) {
+        onSubmit(bookTitle.current.value, bookAuthor.current.value,
+          format(new Date(bookYear.current.value), 'MMM YYY'), bookCategory.current.value);
         bookTitle.current.value = null;
         bookAuthor.current.value = null;
         bookYear.current.value = null;
@@ -64,4 +67,8 @@ BookForm.propTypes = {
   onSubmit: PropTypes.func.isRequired,
 };
 
-export default BookForm;
+const mapDispatchToProps = {
+  onSubmit: (name, author, year, category) => createBook(name, author, year, category),
+};
+
+export default connect(null, mapDispatchToProps)(BookForm);

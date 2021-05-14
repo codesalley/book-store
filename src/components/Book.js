@@ -1,4 +1,4 @@
-/* eslint-disable react/prop-types */
+import PropTypes from 'prop-types';
 import './Book.css';
 
 const Book = (props) => {
@@ -17,6 +17,18 @@ const Book = (props) => {
       </td>
     </tr>
   );
+};
+
+Book.propTypes = {
+  book: PropTypes.shape({
+    id: PropTypes.string,
+    name: PropTypes.string,
+    author: PropTypes.string,
+    category: PropTypes.string,
+    year: PropTypes.string,
+    slice: PropTypes.func,
+  }).isRequired,
+  onclick: PropTypes.func.isRequired,
 };
 
 export default Book;
