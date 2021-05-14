@@ -1,22 +1,23 @@
 .main-book-list {
-    width: 100%;
+  width: 100%;
 }
+
 table {
-    width: 100%;
-    border-collapse: collapse;
+  width: 100%;
+  border-collapse: collapse;
 }
 
+td,
+th {
+  border: 1px solid #10b981;
+  text-align: left;
+  padding: 8px;
+}
 
-td, th {
-    border: 1px solid #10B981;
-    text-align: left;
-    padding: 8px;
-  }
-  
-  tr:nth-child(even) {
-    background-color: #dddddd;
-  }
+tbody tr {
+  font-weight: 300;
+}
 
-  tbody tr {
-    font-weight: 300;
-  }
+tr:nth-child(even) {
+  background-color: #ddd;
+}

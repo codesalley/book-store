@@ -4,9 +4,7 @@ import './Book.css';
 
 const Book = (books) => {
   const { book } = books;
-  const removeBook = (id) => {
-    console.log(id);
-  };
+  const removeBook = (id) => id;
   return (
     <tr>
       <td>{book.id.slice(0, 2)}</td>
