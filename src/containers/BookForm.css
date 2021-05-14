@@ -26,5 +26,5 @@ select {
 .main-form {
   width: 100%;
   display: block;
-  transition:  all 5s 1s ease;
+  transition: all 5s 1s ease;
 }
