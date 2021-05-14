@@ -1,7 +1,7 @@
 import './App.css';
 import { useState } from 'react';
-import BookForm from './components/BookForm';
 import BookListContainer from './containers/BookListContainer';
+import NewBookContainer from './containers/NewBookContainer';
 
 function App() {
   const [toggle, setToggle] = useState(false);
@@ -13,7 +13,7 @@ function App() {
       </div>
       <div className="form-list">
 
-        {toggle ? <BookForm /> : null }
+        {toggle ? <NewBookContainer /> : null }
         <BookListContainer />
       </div>
     </div>
