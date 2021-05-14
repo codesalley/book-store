@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 import { connect } from 'react-redux';
 import { format } from 'date-fns';
 import { createBook } from '../actions';
@@ -7,55 +7,69 @@ import CATEGORIES from '../utils/categories';
 import './BookForm.css';
 
 const BookForm = ({ onSubmit }) => {
-  const [submited, setSubmit] = useState(false);
-  const bookTitle = useRef();
-  const bookAuthor = useRef();
-  const bookYear = useRef();
-  const bookCategory = useRef();
+  const [bookTitle, setTitle] = useState('');
+  const [bookAuthor, setAuthor] = useState('');
+  const [bookYear, setYear] = useState('');
+  const [bookCategory, setCategory] = useState('');
 
-  const addBook = (e) => {
+  const clearFields = () => {
+    setYear('');
+    setTitle('');
+    setAuthor('');
+    setCategory('');
+  };
+
+  const handleSubmit = (e) => {
     e.preventDefault();
-    setSubmit(true);
-    if (typeof onSubmit === 'function') {
-      if (bookTitle.current.value && bookAuthor.current.value
-        && bookYear.current.value && bookCategory.current.value) {
-        onSubmit(bookTitle.current.value, bookAuthor.current.value,
-          format(new Date(bookYear.current.value), 'MMM YYY'), bookCategory.current.value);
-        bookTitle.current.value = null;
-        bookAuthor.current.value = null;
-        bookYear.current.value = null;
-        bookCategory.current.value = null;
-      }
+    if (bookTitle && bookAuthor
+      && bookYear && bookCategory) {
+      onSubmit(bookTitle, bookAuthor,
+        format(new Date(bookYear), 'MMM YYY'), bookCategory);
     }
-    setSubmit(false);
+    clearFields();
+  };
+  const handleChange = (val) => {
+    val.preventDefault();
+    switch (val.target.id) {
+      case 'title':
+        return setTitle(val.target.value);
+      case 'author':
+        return setAuthor(val.target.value);
+      case 'year':
+        return setYear(val.target.value);
+      case 'category':
+        return setCategory(val.target.value);
+      default:
+        return false;
+    }
   };
 
   return (
     <div className="main-form">
       <div className="form-div">
-        <form onSubmit={addBook}>
+        <form onSubmit={handleSubmit}>
 
           <div className="form-label">
             <p> Book Title</p>
-            <input ref={bookTitle} id="title" type="text" className="form-control" placeholder="eg Dr, Wahab" />
+            <input value={bookTitle} onChange={handleChange} id="title" type="text" className="form-control" placeholder="eg Dr, Wahab" />
           </div>
 
           <div className="form-label">
             <p> Book Author</p>
-            <input ref={bookAuthor} id="author" type="text" className="form-control" placeholder="eg Avengers" />
+            <input value={bookAuthor} onChange={handleChange} id="author" type="text" className="form-control" placeholder="eg Avengers" />
           </div>
           <div className="form-label">
             <p> Release Year</p>
-            <input ref={bookYear} id="author" type="date" className="form-control" placeholder="eg Avengers" />
+            <input value={bookYear} onChange={handleChange} id="year" type="date" className="form-control" placeholder="eg Avengers" />
           </div>
 
           <div className="form-label">
             <p>  Book Category </p>
-            <select id="category" ref={bookCategory}>
+            <select value={bookCategory} id="category" onChange={handleChange}>
               {CATEGORIES.map((ele, index) => <option key={index.toString()}>{ele}</option>)}
             </select>
           </div>
-          <button disabled={submited} className="btn" type="submit">Add Book</button>
+          <button className="btn" type="submit">Add Book</button>
 
         </form>
       </div>
