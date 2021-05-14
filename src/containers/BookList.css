@@ -21,3 +21,9 @@ tbody tr {
 tr:nth-child(even) {
   background-color: #ddd;
 }
+
+.fliter-div {
+  width: 40%;
+  max-width: 150px;
+  padding: 20px 0;
+}
