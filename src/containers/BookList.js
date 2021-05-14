@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
-import Book from './Book';
+import { connect } from 'react-redux';
+import Book from '../components/Book';
 import './BookList.css';
 
 const BookList = ({ books }) => (
@@ -24,13 +25,24 @@ const BookList = ({ books }) => (
   </div>
 );
 
+const mapStateToProps = (state) => ({
+  books: state.books,
+});
+
 BookList.propTypes = {
-  // eslint-disable-next-line react/forbid-prop-types
-  books: PropTypes.array,
+  books: PropTypes.arrayOf(
+    PropTypes.objectOf({
+      id: PropTypes.string,
+      name: PropTypes.string,
+      author: PropTypes.string,
+      category: PropTypes.string,
+      year: PropTypes.string,
+    }),
+  ),
 };
 
 BookList.defaultProps = {
   books: [],
 };
 
-export default BookList;
+export default connect(mapStateToProps)(BookList);
