@@ -7,41 +7,34 @@ import CATEGORIES from '../utils/categories';
 import './BookForm.css';
 
 const BookForm = ({ onSubmit }) => {
-  const [bookTitle, setTitle] = useState('');
-  const [bookAuthor, setAuthor] = useState('');
-  const [bookYear, setYear] = useState('');
-  const [bookCategory, setCategory] = useState('');
-
-  const clearFields = () => {
-    setYear('');
-    setTitle('');
-    setAuthor('');
-    setCategory('');
-  };
+  const [bookDetails, setBookDetails] = useState({
+    title: '',
+    author: '',
+    year: '',
+    category: '',
+  });
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (bookTitle && bookAuthor
-      && bookYear && bookCategory) {
-      onSubmit(bookTitle, bookAuthor,
-        format(new Date(bookYear), 'MMM YYY'), bookCategory);
+    const {
+      title, author, year, category,
+    } = bookDetails;
+    if (title && author && year && category) {
+      onSubmit(title, author, format(new Date(year), 'MMM YYY'), category);
+      setBookDetails({
+        title: '',
+        author: '',
+        year: '',
+        category: '',
+      });
     }
-    clearFields();
   };
-  const handleChange = (val) => {
-    val.preventDefault();
-    switch (val.target.id) {
-      case 'title':
-        return setTitle(val.target.value);
-      case 'author':
-        return setAuthor(val.target.value);
-      case 'year':
-        return setYear(val.target.value);
-      case 'category':
-        return setCategory(val.target.value);
-      default:
-        return false;
-    }
+
+  const handleChange = ({ target: { id, value } }) => {
+    setBookDetails((oldData) => ({
+      ...oldData,
+      [id]: value,
+    }));
   };
 
   return (
@@ -51,21 +44,21 @@ const BookForm = ({ onSubmit }) => {
 
           <div className="form-label">
             <p> Book Title</p>
-            <input value={bookTitle} onChange={handleChange} id="title" type="text" className="form-control" placeholder="eg Dr, Wahab" />
+            <input value={bookDetails.title} onChange={handleChange} id="title" type="text" className="form-control" placeholder="eg Dr, Wahab" />
           </div>
 
           <div className="form-label">
             <p> Book Author</p>
-            <input value={bookAuthor} onChange={handleChange} id="author" type="text" className="form-control" placeholder="eg Avengers" />
+            <input value={bookDetails.author} onChange={handleChange} id="author" type="text" className="form-control" placeholder="eg Avengers" />
           </div>
           <div className="form-label">
             <p> Release Year</p>
-            <input value={bookYear} onChange={handleChange} id="year" type="date" className="form-control" placeholder="eg Avengers" />
+            <input value={bookDetails.year} onChange={handleChange} id="year" type="date" className="form-control" placeholder="eg Avengers" />
           </div>
 
           <div className="form-label">
             <p>  Book Category </p>
-            <select value={bookCategory} id="category" onChange={handleChange}>
+            <select value={bookDetails.category} id="category" onChange={handleChange}>
               {CATEGORIES.map((ele, index) => <option key={index.toString()}>{ele}</option>)}
             </select>
           </div>
