@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import Book from './Book';
 import './BookList.css';
 
-const BookList = ({ books }) => (
+const BookList = ({ books, onclick }) => (
   <div className="main-book-list">
     <table>
       <thead>
@@ -18,7 +18,7 @@ const BookList = ({ books }) => (
       </thead>
       <tbody>
 
-        {books.map((book, index) => <Book book={book} key={index.toString()} />)}
+        {books.map((book, index) => <Book book={book} key={index.toString()} onclick={onclick} />)}
       </tbody>
     </table>
   </div>
@@ -27,6 +27,7 @@ const BookList = ({ books }) => (
 BookList.propTypes = {
   // eslint-disable-next-line react/forbid-prop-types
   books: PropTypes.array,
+  onclick: PropTypes.func.isRequired,
 };
 
 BookList.defaultProps = {
