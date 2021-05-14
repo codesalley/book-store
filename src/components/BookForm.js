@@ -1,6 +1,7 @@
 /* eslint-disable max-len */
 import PropTypes from 'prop-types';
 import { useRef, useState } from 'react';
+import { format } from 'date-fns';
 import CATEGORIES from '../utils/categories';
 import './BookForm.css';
 
@@ -10,13 +11,19 @@ const BookForm = ({ onSubmit }) => {
   const bookAuthor = useRef();
   const bookYear = useRef();
   const bookCategory = useRef();
-  if (typeof onSubmit === 'function') {
-    console.log('true');
-  }
+
   const addBook = (e) => {
     e.preventDefault();
     setSubmit(true);
-    console.log('submitted');
+    if (typeof onSubmit === 'function') {
+      if (bookTitle.current.value && bookAuthor.current.value && bookYear.current.value && bookCategory.current.value) {
+        onSubmit(bookTitle.current.value, bookAuthor.current.value, format(new Date(bookYear.current.value), 'MMM YYY'), bookCategory.current.value);
+        bookTitle.current.value = null;
+        bookAuthor.current.value = null;
+        bookYear.current.value = null;
+        bookCategory.current.value = null;
+      }
+    }
     setSubmit(false);
   };
 
@@ -40,8 +47,8 @@ const BookForm = ({ onSubmit }) => {
 
         <div className="form-label">
           <p>  Book Category </p>
-          <select id="category">
-            {CATEGORIES.map((ele, index) => <option ref={bookCategory} key={index.toString()}>{ele}</option>)}
+          <select id="category" ref={bookCategory}>
+            {CATEGORIES.map((ele, index) => <option key={index.toString()}>{ele}</option>)}
           </select>
         </div>
         <button disabled={submited} className="btn" type="submit">Add Book</button>
