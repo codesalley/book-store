@@ -2,25 +2,7 @@
   width: 100%;
 }
 
-table {
-  width: 100%;
-  border-collapse: collapse;
-}
 
-td,
-th {
-  border: 1px solid #10b981;
-  text-align: left;
-  padding: 8px;
-}
-
-tbody tr {
-  font-weight: 300;
-}
-
-tr:nth-child(even) {
-  background-color: #ddd;
-}
 
 .fliter-div {
   width: 40%;

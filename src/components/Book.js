@@ -4,18 +4,26 @@ import './Book.css';
 const Book = (props) => {
   const { book, onclick } = props;
   return (
-    <tr>
-      <td>{book.id.slice(0, 2)}</td>
-      <td>{book.name}</td>
-      <td>{book.author}</td>
-      <td>{book.category}</td>
-      <td>{book.year}</td>
-      <td className="action-column">
-        {' '}
-        <button className="remove-btn" type="button" onClick={() => onclick(book.id)}>X</button>
-        {' '}
-      </td>
-    </tr>
+    <div className="book-card">
+      <div className="book-details">
+        <p className="category">{book.category}</p>
+        <p className="book-title">{book.name}</p>
+        <p className="book-author">{book.author}</p>
+        <div className="book-actions">
+
+          <button className="remove-btn" type="button" onClick={() => onclick(book.id)}>X</button>
+          <button className="remove-btn" type="button" onClick={() => onclick(book.id)}>X</button>
+          <button className="remove-btn" type="button" onClick={() => onclick(book.id)}>X</button>
+        </div>
+      </div>
+      <div className="read-status">
+        book status
+      </div>
+      <div className="book-update">
+        update book
+      </div>
+    </div>
+
   );
 };
 

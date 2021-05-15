@@ -18,6 +18,10 @@
   margin: auto;
 }
 
+.right-nav {
+  display: flex;
+}
+
 .sub-nav {
   display: flex;
   justify-content: space-between;

@@ -8,3 +8,9 @@
 .action-column {
   text-align: center;
 }
+
+
+.book-card {
+  display: flex;
+  width: 100%;
+}
