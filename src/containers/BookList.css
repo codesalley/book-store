@@ -1,11 +1,22 @@
 .main-book-list {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-
+.form-list {
+  padding: 0 10%;
+}
 
 .fliter-div {
   width: 40%;
   max-width: 150px;
   padding: 20px 0;
+}
+
+.book-card{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }

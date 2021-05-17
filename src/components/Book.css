@@ -13,4 +13,21 @@
 .book-card {
   display: flex;
   width: 100%;
+  padding: 10px 20px;
+  background-color: white;
+  border-radius: 4px;
+  border: solid 1px #e8e8e8;
+  box-shadow: 0 0 60px 0 #e8e8e8;
+}
+
+
+.category {
+  font-size: 12px;
+  font-weight: 600;
+  opacity: 0.4;
+}
+
+.book-title {
+  font-weight: 700;
+  font-size: 20px;
 }

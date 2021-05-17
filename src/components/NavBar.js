@@ -11,8 +11,8 @@ const NavBar = ({ onchangeFilter }) => {
   return (
     <div className="sub-nav">
       <div className="right-nav">
-        <h1>Book Store</h1>
-        <button className="btn" type="button">BOOKS</button>
+        <h1> BookStore </h1>
+        <button className="nav-btn" type="button">BOOKS</button>
         <CategoryFilter onchange={handleFilterChange} />
       </div>
       <div className="left-nav">

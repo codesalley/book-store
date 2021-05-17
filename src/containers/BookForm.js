@@ -43,7 +43,7 @@ const BookForm = ({ onSubmit }) => {
 
           <input value={bookDetails.author} onChange={handleChange} id="author" type="text" className="form-control" placeholder="eg Avengers" />
           <select value={bookDetails.category} id="category" onChange={handleChange} placeholder="Category">
-            {CATEGORIES.map((ele, index) => <option key={index.toString()}>{ele}</option>)}
+            {CATEGORIES.map((ele, index) => <option className="option" key={index.toString()}>{ele}</option>)}
           </select>
 
           <button className="btn" type="submit">Add Book</button>
