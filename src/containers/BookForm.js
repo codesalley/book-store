@@ -46,7 +46,11 @@ const BookForm = ({ onSubmit }) => {
             {CATEGORIES.map((ele, index) => <option className="option" key={index.toString()}>{ele}</option>)}
           </select>
 
-          <button className="btn" type="submit">Add Book</button>
+          <button className="btn" type="submit">
+            {' '}
+            <span>ADD BOOK </span>
+            {' '}
+          </button>
 
         </form>
       </div>

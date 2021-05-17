@@ -11,6 +11,7 @@ function App() {
         <BookList />
       </div>
       <div className="new-book">
+        <h2 className="addNew-book">ADD NEW BOOK</h2>
         <BookForm />
       </div>
     </div>

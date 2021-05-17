@@ -1,12 +1,26 @@
 .remove-btn {
-  background-color: inherit;
-  color: red;
+  font-size: 14px;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #4386bf;
+  background-color: white;
   border: none;
-  text-align: center;
+  padding-right: 10px;
+  opacity: 0.6;
 }
 
 .action-column {
   text-align: center;
+}
+
+.book-details {
+  display: flex; 
+  flex-direction: column; 
+  gap: 7px;
+
 }
 
 
@@ -25,9 +39,27 @@
   font-size: 12px;
   font-weight: 600;
   opacity: 0.4;
+  color: #121212;
 }
 
 .book-title {
-  font-weight: 700;
-  font-size: 20px;
+  font-size: 22px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  font-family: 'Roboto Slab', serif;
+  opacity: 0.8;
+  color: #121212;
+}
+
+.book-author {
+  font-family: 'Roboto Slab', serif;
+  font-size: 14px;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  color: #4386bf;
+  opacity: 0.7;
 }

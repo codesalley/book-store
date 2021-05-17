@@ -1,6 +1,9 @@
 .App h1 {
-  font-family: 'Pacifico', cursive;
-  width: 100%;
+  font-family: 'Montserrat', sans-serif;
+  color: #0290ff;
+  white-space: nowrap; 
+  font-size: 5vw;
+  font-weight: bold;
 }
 
 .form-list {
@@ -20,6 +23,32 @@
   gap: 20px;
 }
 
+.left-nav svg {
+  color: #0290ff;
+}
+
+.addNew-book {
+  font-size: 20px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.18px;
+  font-family: 'Montserrat', sans-serif;
+  color: #888888;
+}
+
+.left-nav {
+  border-radius: 50px;
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-content: center;
+  box-shadow: 0 0 60px 0 rgba(0, 0, 0, 0.05);
+  background-color: #fafafa;
+  border: solid 1px #e8e8e8;
+}
+
 .right-nav {
   display: flex;
   gap: 10px;
@@ -37,19 +66,29 @@
 
 .nav-btn {
   height: 30px;
-  background-color: #10b981;
+  background-color: white;
   border: none;
   border-radius: 5px;
-  color: white;
+  color: #121212;
   padding: 2px 10px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
 }
 
 
 .btn {
   height: 40px;
-  background-color: #10b981;
+  background-color: #0290ff;
   border: none;
   border-radius: 5px;
   color: white;
   padding: 10px 20px;
+  font-family: 'Roboto Slab', serif;
+}
+
+.btn span {
+  -webkit-filter: blur(0.5px);
+  filter: blur(0.5px);
 }

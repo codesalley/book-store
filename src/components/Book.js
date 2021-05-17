@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import './Book.css';
+import svgLoader from '../assets/loader.svg';
 
 const Book = (props) => {
   const { book, onclick } = props;
@@ -11,16 +12,22 @@ const Book = (props) => {
         <p className="book-author">{book.author}</p>
         <div className="book-actions">
 
-          <button className="remove-btn" type="button" onClick={() => onclick(book.id)}>X</button>
-          <button className="remove-btn" type="button" onClick={() => onclick(book.id)}>X</button>
-          <button className="remove-btn" type="button" onClick={() => onclick(book.id)}>X</button>
+          <button className="remove-btn" type="button">Comments |</button>
+          <button className="remove-btn" type="button" onClick={() => onclick(book.id)}>Remove |</button>
+          <button className="remove-btn" type="button">Edit</button>
         </div>
       </div>
       <div className="read-status">
-        book status
+        <img src={svgLoader} alt="spinner" />
+        <div>
+          <p className="status">70%</p>
+          <p className="complete-status">Completed</p>
+        </div>
       </div>
       <div className="book-update">
-        update book
+        <p className="chapter-current">Current Chapter</p>
+        <p className="chapter">Chapter 3: &quot;A Lesson Learned &quot;</p>
+        <button type="button" className="btn btn-update">Update progress </button>
       </div>
     </div>
 
