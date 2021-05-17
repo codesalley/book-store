@@ -18,7 +18,7 @@ const Book = (props) => {
         </div>
       </div>
       <div className="read-status">
-        <img src={svgLoader} alt="spinner" />
+        <img className="spinner" src={svgLoader} alt="spinner" />
         <div>
           <p className="status">70%</p>
           <p className="complete-status">Completed</p>
@@ -26,8 +26,8 @@ const Book = (props) => {
       </div>
       <div className="book-update">
         <p className="chapter-current">Current Chapter</p>
-        <p className="chapter">Chapter 3: &quot;A Lesson Learned &quot;</p>
-        <button type="button" className="btn btn-update">Update progress </button>
+        <p className="chapter">Chapter 3 </p>
+        <button type="button" className="btn-update">Update progress </button>
       </div>
     </div>
 

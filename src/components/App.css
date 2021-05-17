@@ -2,7 +2,7 @@
   font-family: 'Montserrat', sans-serif;
   color: #0290ff;
   white-space: nowrap; 
-  font-size: 5vw;
+  font-size: 34px;
   font-weight: bold;
 }
 
@@ -84,11 +84,26 @@
   border: none;
   border-radius: 5px;
   color: white;
-  padding: 10px 20px;
+  padding: 10px 8px;
   font-family: 'Roboto Slab', serif;
+  font-size: 11px;
 }
 
 .btn span {
   -webkit-filter: blur(0.5px);
   filter: blur(0.5px);
+}
+
+
+@media screen and (max-width: 666px) {
+  .left-nav {
+    display: none;
+  }
+  .right-nav h1{
+      font-size: 20px;
+  }
+.nav-btn {
+  font-size: 11px;
+}
+  
 }
