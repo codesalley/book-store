@@ -21,11 +21,7 @@ select {
   color: #c4c4c4;
 }
 
-
-
 @media screen and (max-width: 700px) {
-  
-  
   form {
     display: flex;
     flex-direction: column;
@@ -33,30 +29,29 @@ select {
     max-width: 400px;
     width: 100%;
   }
-  
 }
 
 @media screen and (min-width: 700px) {
-  
+  form {
+    display: flex;
+    width: 100%;
+    gap: 10px;
+  }
 
+  #title,
+  #author {
+    flex: 3;
+  }
 
-form {
-  display: flex;
-  width: 100%;
-  gap: 10px;
-}
+  #category {
+    flex: 1;
+  }
 
-#title, #author {
-  flex: 3;
-}
-#category  {
-  flex: 1;
-}
-.btn {
-  flex: 1;
-}
+  .btn {
+    flex: 1;
+  }
 
-.option {
-  background-color: red;
-}
+  .option {
+    background-color: red;
+  }
 }

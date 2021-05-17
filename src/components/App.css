@@ -1,7 +1,7 @@
 .App h1 {
   font-family: 'Montserrat', sans-serif;
   color: #0290ff;
-  white-space: nowrap; 
+  white-space: nowrap;
   font-size: 34px;
   font-weight: bold;
 }
@@ -35,7 +35,7 @@
   line-height: normal;
   letter-spacing: -0.18px;
   font-family: 'Montserrat', sans-serif;
-  color: #888888;
+  color: #888;
 }
 
 .left-nav {
@@ -77,7 +77,6 @@
   font-style: normal;
 }
 
-
 .btn {
   height: 40px;
   background-color: #0290ff;
@@ -94,16 +93,16 @@
   filter: blur(0.5px);
 }
 
-
 @media screen and (max-width: 666px) {
   .left-nav {
     display: none;
   }
-  .right-nav h1{
-      font-size: 20px;
+
+  .right-nav h1 {
+    font-size: 20px;
   }
-.nav-btn {
-  font-size: 11px;
-}
-  
+
+  .nav-btn {
+    font-size: 11px;
+  }
 }

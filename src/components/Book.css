@@ -17,12 +17,10 @@
 }
 
 .book-details {
-  display: flex; 
-  flex-direction: column; 
+  display: flex;
+  flex-direction: column;
   gap: 7px;
-
 }
-
 
 .book-card {
   display: flex;
@@ -33,7 +31,6 @@
   border: solid 1px #e8e8e8;
   box-shadow: 0 0 60px 0 #e8e8e8;
 }
-
 
 .category {
   font-size: 12px;
@@ -48,7 +45,6 @@
   justify-content: center;
   gap: 5px;
 }
-
 
 .status {
   font-size: 22px;
@@ -73,8 +69,6 @@
   opacity: 0.8;
   font-family: 'Roboto Slab', serif;
 }
-
-
 
 .btn-update {
   background-color: #0290ff;
@@ -135,6 +129,7 @@
     display: none;
   }
 }
+
 @media screen and (max-width: 556px) {
   .book-update {
     display: none;
