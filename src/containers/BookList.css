@@ -1,29 +1,22 @@
 .main-book-list {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-td,
-th {
-  border: 1px solid #10b981;
-  text-align: left;
-  padding: 8px;
-}
-
-tbody tr {
-  font-weight: 300;
-}
-
-tr:nth-child(even) {
-  background-color: #ddd;
+.form-list {
+  padding: 0 10%;
 }
 
 .fliter-div {
   width: 40%;
   max-width: 150px;
   padding: 20px 0;
+}
+
+.book-card {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }

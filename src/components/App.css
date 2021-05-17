@@ -1,6 +1,9 @@
 .App h1 {
-  text-align: center;
-  font-family: 'Pacifico', cursive;
+  font-family: 'Montserrat', sans-serif;
+  color: #0290ff;
+  white-space: nowrap;
+  font-size: 34px;
+  font-weight: bold;
 }
 
 .form-list {
@@ -14,22 +17,92 @@
 
 .App {
   max-width: 1220px;
-  width: 90%;
   margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.left-nav svg {
+  color: #0290ff;
+}
+
+.addNew-book {
+  font-size: 20px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.18px;
+  font-family: 'Montserrat', sans-serif;
+  color: #888;
+}
+
+.left-nav {
+  border-radius: 50px;
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-content: center;
+  box-shadow: 0 0 60px 0 rgba(0, 0, 0, 0.05);
+  background-color: #fafafa;
+  border: solid 1px #e8e8e8;
+}
+
+.right-nav {
+  display: flex;
+  gap: 10px;
+  align-items: center;
 }
 
 .sub-nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 0;
+  padding: 20px 10%;
+  width: 100%;
+  background-color: white;
+}
+
+.nav-btn {
+  height: 30px;
+  background-color: white;
+  border: none;
+  border-radius: 5px;
+  color: #12121291;
+  padding: 2px 10px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
 }
 
 .btn {
   height: 40px;
-  background-color: #10b981;
+  background-color: #0290ff;
   border: none;
   border-radius: 5px;
   color: white;
-  padding: 10px 20px;
+  padding: 10px 8px;
+  font-family: 'Roboto Slab', serif;
+  font-size: 11px;
+}
+
+.btn span {
+  -webkit-filter: blur(0.5px);
+  filter: blur(0.5px);
+}
+
+@media screen and (max-width: 666px) {
+  .left-nav {
+    display: none;
+  }
+
+  .right-nav h1 {
+    font-size: 20px;
+  }
+
+  .nav-btn {
+    font-size: 11px;
+  }
 }

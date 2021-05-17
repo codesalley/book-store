@@ -4,8 +4,8 @@ import CATEGORIES from '../utils/categories';
 const CategoryFilter = (handleFilterChange) => {
   const { onchange } = handleFilterChange;
   return (
-    <select onChange={onchange}>
-      <option value="all">All</option>
+    <select onChange={onchange} className="nav-btn">
+      <option placeholder="Category" value="all">CATEGORY</option>
       {CATEGORIES.map((e, i) => <option key={i.toString()} value={e.toString()}>{e}</option>)}
     </select>
   );

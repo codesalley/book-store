@@ -1,10 +1,137 @@
 .remove-btn {
-  background-color: inherit;
-  color: red;
+  font-size: 14px;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #4386bf;
+  background-color: white;
   border: none;
-  text-align: center;
+  padding-right: 10px;
+  opacity: 0.6;
 }
 
 .action-column {
   text-align: center;
+}
+
+.book-details {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.book-card {
+  display: flex;
+  width: 100%;
+  padding: 10px 20px;
+  background-color: white;
+  border-radius: 4px;
+  border: solid 1px #e8e8e8;
+  box-shadow: 0 0 60px 0 #e8e8e8;
+}
+
+.category {
+  font-size: 12px;
+  font-weight: 600;
+  opacity: 0.4;
+  color: #121212;
+}
+
+.read-status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.status {
+  font-size: 22px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #121212;
+  font-family: 'Montserrat', sans-serif;
+  opacity: 0.8;
+}
+
+.chapter-current {
+  font-size: 12px;
+  opacity: 0.5;
+  font-family: 'Roboto Slab', serif;
+}
+
+.chapter {
+  font-size: 14px;
+  opacity: 0.8;
+  font-family: 'Roboto Slab', serif;
+}
+
+.btn-update {
+  background-color: #0290ff;
+  padding: 5px 18px;
+  font-size: 12px;
+  height: inherit;
+  font-family: 'Roboto Slab', serif;
+  font-weight: 300;
+  border: none;
+  color: white;
+  border-radius: 5px;
+}
+
+.complete-status {
+  font-size: 12px;
+  color: #121212;
+  font-family: 'Montserrat', sans-serif;
+  opacity: 0.5;
+}
+
+.spinner {
+  width: 48px;
+  height: 48px;
+}
+
+.book-title {
+  font-size: 22px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  font-family: 'Roboto Slab', serif;
+  opacity: 0.8;
+  color: #121212;
+}
+
+.book-update {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 5%;
+}
+
+.book-author {
+  font-family: 'Roboto Slab', serif;
+  font-size: 14px;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  color: #4386bf;
+  opacity: 0.7;
+}
+
+@media screen and (max-width: 756px) {
+  .read-status {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 556px) {
+  .book-update {
+    display: none;
+  }
 }

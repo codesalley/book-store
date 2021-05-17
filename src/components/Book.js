@@ -1,21 +1,36 @@
 import PropTypes from 'prop-types';
 import './Book.css';
+import svgLoader from '../assets/loader.svg';
 
 const Book = (props) => {
   const { book, onclick } = props;
   return (
-    <tr>
-      <td>{book.id.slice(0, 2)}</td>
-      <td>{book.name}</td>
-      <td>{book.author}</td>
-      <td>{book.category}</td>
-      <td>{book.year}</td>
-      <td className="action-column">
-        {' '}
-        <button className="remove-btn" type="button" onClick={() => onclick(book.id)}>X</button>
-        {' '}
-      </td>
-    </tr>
+    <div className="book-card">
+      <div className="book-details">
+        <p className="category">{book.category}</p>
+        <p className="book-title">{book.name}</p>
+        <p className="book-author">{book.author}</p>
+        <div className="book-actions">
+
+          <button className="remove-btn" type="button">Comments |</button>
+          <button className="remove-btn" type="button" onClick={() => onclick(book.id)}>Remove |</button>
+          <button className="remove-btn" type="button">Edit</button>
+        </div>
+      </div>
+      <div className="read-status">
+        <img className="spinner" src={svgLoader} alt="spinner" />
+        <div>
+          <p className="status">70%</p>
+          <p className="complete-status">Completed</p>
+        </div>
+      </div>
+      <div className="book-update">
+        <p className="chapter-current">Current Chapter</p>
+        <p className="chapter">Chapter 3 </p>
+        <button type="button" className="btn-update">Update progress </button>
+      </div>
+    </div>
+
   );
 };
 
